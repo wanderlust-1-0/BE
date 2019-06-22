@@ -1,9 +1,8 @@
 package com.lambdaschool.wanderlust.services;
 
-import com.lambdaschool.bookstore.exceptions.ResourceNotFoundException;
-import com.lambdaschool.bookstore.model.Role;
-import com.lambdaschool.bookstore.model.UserRoles;
-import com.lambdaschool.bookstore.repository.RoleRepository;
+import com.lambdaschool.wanderlust.exceptions.ResourceNotFoundException;
+import com.lambdaschool.wanderlust.model.UserRoles;
+import com.lambdaschool.wanderlust.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
