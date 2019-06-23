@@ -1,5 +1,7 @@
 package com.lambdaschool.wanderlust.services;
 
+import com.lambdaschool.wanderlust.model.Role;
+
 import java.util.List;
 
 public interface RoleService

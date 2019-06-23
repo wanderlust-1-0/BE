@@ -1,5 +1,7 @@
 package com.lambdaschool.wanderlust.services;
 
+import com.lambdaschool.wanderlust.model.User;
+
 import java.util.List;
 
 public interface UserService {

@@ -1,5 +1,6 @@
 package com.lambdaschool.wanderlust.controllers;
 
+import com.lambdaschool.wanderlust.model.Role;
 import com.lambdaschool.wanderlust.services.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;

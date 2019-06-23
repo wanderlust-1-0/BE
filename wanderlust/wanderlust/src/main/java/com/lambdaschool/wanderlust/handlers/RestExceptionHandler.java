@@ -1,7 +1,7 @@
 package com.lambdaschool.wanderlust.handlers;
 
-import com.lambdaschool.bookstore.exceptions.ResourceNotFoundException;
-import com.lambdaschool.bookstore.model.ErrorDetail;
+import com.lambdaschool.wanderlust.exceptions.ResourceNotFoundException;
+import com.lambdaschool.wanderlust.model.ErrorDetail;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;

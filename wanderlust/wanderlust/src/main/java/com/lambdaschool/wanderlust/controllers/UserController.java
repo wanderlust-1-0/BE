@@ -1,5 +1,6 @@
 package com.lambdaschool.wanderlust.controllers;
 
+import com.lambdaschool.wanderlust.model.User;
 import com.lambdaschool.wanderlust.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

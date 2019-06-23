@@ -1,6 +1,7 @@
 package com.lambdaschool.wanderlust.services;
 
 import com.lambdaschool.wanderlust.exceptions.ResourceNotFoundException;
+import com.lambdaschool.wanderlust.model.Role;
 import com.lambdaschool.wanderlust.model.UserRoles;
 import com.lambdaschool.wanderlust.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;

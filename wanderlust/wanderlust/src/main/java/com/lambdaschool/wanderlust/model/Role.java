@@ -14,6 +14,8 @@ public class Role extends Auditable
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long roleid;
 
+
+
     @Column(nullable = false,
             unique = true)
     private String name;

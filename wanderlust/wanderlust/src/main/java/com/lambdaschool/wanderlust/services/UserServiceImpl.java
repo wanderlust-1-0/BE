@@ -1,6 +1,7 @@
 package com.lambdaschool.wanderlust.services;
 
 
+import com.lambdaschool.wanderlust.model.User;
 import com.lambdaschool.wanderlust.model.UserRoles;
 import com.lambdaschool.wanderlust.repository.RoleRepository;
 import com.lambdaschool.wanderlust.repository.UserRepository;
