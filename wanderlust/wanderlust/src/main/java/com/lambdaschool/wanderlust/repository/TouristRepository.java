@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface TouristRepository extends CrudRepository<Tourist,Long>
 {
-    List<Tourist> findByTouristNameContainingIgnoreCase(String name);
+//    List<Tourist> findByTouristNameContainingIgnoreCase(String name);
 
 }

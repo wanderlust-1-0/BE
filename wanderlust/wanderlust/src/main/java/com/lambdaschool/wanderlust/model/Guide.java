@@ -35,7 +35,8 @@ public class Guide
     private Boolean istourguide=true;
 
 
-    @OneToMany(mappedBy = "guide")
+    @OneToMany(mappedBy = "guide",
+                    cascade = CascadeType.ALL)
     @JsonIgnoreProperties("guides")
     private List<Tour> tours= new ArrayList<>();
 

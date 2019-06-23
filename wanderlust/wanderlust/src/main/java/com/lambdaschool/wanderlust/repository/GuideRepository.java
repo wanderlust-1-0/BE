@@ -7,5 +7,5 @@ import java.util.ArrayList;
 
 public interface GuideRepository extends CrudRepository<Guide,Long>
 {
-    ArrayList<Guide> findGuideBynameEquals(String name);
+//    ArrayList<Guide> findGuideBynameEquals(String name);
 }

@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
-//@RestController
-//@RequestMapping(value="/tours")
+@RestController
+@RequestMapping(value="/tours")
 public class ToursController
 {
 
@@ -57,9 +57,6 @@ public class ToursController
         tourService.save(addTour);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-
-
 
 
 
