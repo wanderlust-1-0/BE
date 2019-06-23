@@ -36,7 +36,8 @@ public class Guide
 
 
     @OneToMany(mappedBy = "guide",
-                    cascade = CascadeType.ALL)
+                    cascade = CascadeType.ALL,
+                    orphanRemoval = true)
     @JsonIgnoreProperties("guides")
     private List<Tour> tours= new ArrayList<>();
 

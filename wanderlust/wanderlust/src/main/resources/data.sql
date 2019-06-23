@@ -11,7 +11,7 @@ INSERT INTO tourist (touristid, firstname, lastname) VALUES (4, 'Wells', 'Teague
 INSERT INTO tourist (touristid, firstname, lastname) VALUES (5, 'George', 'Gallinger');
 INSERT INTO tourist (touristid, firstname, lastname) VALUES (6, 'Ian', 'Stewart');
 
-INSERT INTO tour (tourid, tourdescription, tourguidephonenumber, whattobring,durationhrs,likes,price,recommendedage) VALUES (1, 'Flatterland', '9780738206752', '2001',2,23,45,3);
+INSERT INTO tour (tourid, tourdescription, tourguidephonenumber, whattobring,durationhrs,likes,price,recommendedage,guideid) VALUES (1, 'Flatterland', '9780738206752', '2001',2,23,45,3,1);
 INSERT INTO tour (tourid, tourdescription, tourguidephonenumber, whattobring,durationhrs,likes,price,recommendedage) VALUES (2, 'Digital Fortess', '9788489367012', '2007',3,434,45,4);
 INSERT INTO tour (tourid, tourdescription, tourguidephonenumber, whattobring,durationhrs,likes,price,recommendedage) VALUES (3, 'The Da Vinci Code', '9780307474278', '2009',4,45,45,5);
 INSERT INTO tour (tourid, tourdescription, tourguidephonenumber, whattobring,durationhrs,likes,price,recommendedage) VALUES (4, 'Essentials of Finance', '1314241651234','78',5, 64,56,65);
@@ -23,6 +23,7 @@ INSERT INTO touristtours (tourid, touristid) VALUES (3, 2);
 INSERT INTO touristtours (tourid, touristid) VALUES (4, 5);
 INSERT INTO touristtours (tourid, touristid) VALUES (4, 3);
 INSERT INTO touristtours (tourid, touristid) VALUES (5, 4);
+
 
 
 INSERT INTO touristtours (tourid, touristid) VALUES (5, 4);
