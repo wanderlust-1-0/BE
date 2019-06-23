@@ -24,4 +24,9 @@ INSERT INTO touristtours (tourid, touristid) VALUES (4, 5);
 INSERT INTO touristtours (tourid, touristid) VALUES (4, 3);
 INSERT INTO touristtours (tourid, touristid) VALUES (5, 4);
 
+
+INSERT INTO touristtours (tourid, touristid) VALUES (5, 4);
+
+
+
 alter sequence hibernate_sequence restart with 25;
