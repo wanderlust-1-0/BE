@@ -8,31 +8,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "tourists")
+@Table(name = "tourist")
 public class Tourist
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long touristid;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private String firstname;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private String lastname;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private String phonenumber;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private String email;
 
     @ManyToMany
-    @JoinTable(name = "touristtours", joinColumns = {@JoinColumn(name = "touristid")},inverseJoinColumns = {@JoinColumn(name = "tourid")})
+    @JoinTable(name = "touristtours",
+            joinColumns = {@JoinColumn(name = "touristid")},
+            inverseJoinColumns = {@JoinColumn(name = "tourid")})
     @JsonIgnoreProperties("tourists")
     private List<Tour> tours = new ArrayList<>();
 

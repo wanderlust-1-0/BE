@@ -7,31 +7,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "guides")
+@Table(name = "guide")
 public class Guide
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long guideid;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private String firstname;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private String lastname;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private String phonenumber;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private String email;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private Boolean istourguide=true;
 
 
@@ -41,6 +41,14 @@ public class Guide
 
     public Guide()
     {
+    }
+
+    public Guide(String firstname, String lastname, String phonenumber, String email)
+    {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.phonenumber = phonenumber;
+        this.email = email;
     }
 
     public Guide(String firstname)

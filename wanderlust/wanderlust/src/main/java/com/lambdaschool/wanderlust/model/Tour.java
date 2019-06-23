@@ -8,55 +8,55 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "tours")
+@Table(name = "tour")
 public class Tour
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long tourid;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = false)
     private String tourname;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = false)
     private String tourdescription;
 
-    @Column(nullable = false,
-            unique = true)
-    private String tourgiudephonenumber;
+//    @Column(nullable = false,
+//            unique = true)
+    private String tourguidephonenumber;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private long recommendedage;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private String whattobring;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private String category;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private String area;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private long price;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private long durationhrs;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private String meetingaddress;
 
-    @Column(nullable = false,
-            unique = true)
+//    @Column(nullable = false,
+//            unique = true)
     private long likes;
 
     @ManyToOne
@@ -65,7 +65,7 @@ public class Tour
     private Guide guide;
 
     @ManyToMany(mappedBy = "tours")
-    @JsonIgnoreProperties("courses")
+    @JsonIgnoreProperties("tours")
     private List<Tourist> tourists= new ArrayList<>();
 
     public Tour()
@@ -81,6 +81,22 @@ public class Tour
     {
         this.guide = guide;
         this.tourname=tourname;
+    }
+
+    public Tour(String tourname, String tourdescription, String tourguidephonenumber, long recommendedage, String whattobring, String category, String area, long price, long durationhrs, String meetingaddress, long likes, Guide guide)
+    {
+        this.tourname = tourname;
+        this.tourdescription = tourdescription;
+        this.tourguidephonenumber = tourguidephonenumber;
+        this.recommendedage = recommendedage;
+        this.whattobring = whattobring;
+        this.category = category;
+        this.area = area;
+        this.price = price;
+        this.durationhrs = durationhrs;
+        this.meetingaddress = meetingaddress;
+        this.likes = likes;
+        this.guide = guide;
     }
 
     public long getTourid()
@@ -213,14 +229,14 @@ public class Tour
         this.tourists = tourists;
     }
 
-    public String getTourgiudephonenumber()
+    public String getTourguidephonenumber()
     {
-        return tourgiudephonenumber;
+        return tourguidephonenumber;
     }
 
-    public void setTourgiudephonenumber(String tourgiudephonenumber)
+    public void setTourguidephonenumber(String tourguidephonenumber)
     {
-        this.tourgiudephonenumber = tourgiudephonenumber;
+        this.tourguidephonenumber = tourguidephonenumber;
     }
 }
 
