@@ -31,6 +31,8 @@ public class Tourist
 //            unique = true)
     private String email;
 
+    private Boolean istourguide=false;
+
     @ManyToMany
     @JoinTable(name = "touristtours",
             joinColumns = {@JoinColumn(name = "touristid")},
@@ -40,6 +42,16 @@ public class Tourist
 
     public Tourist()
     {
+    }
+
+    public Boolean getIstourguide()
+    {
+        return istourguide;
+    }
+
+    public void setIstourguide(Boolean istourguide)
+    {
+        this.istourguide = istourguide;
     }
 
     public Tourist(String firstname)

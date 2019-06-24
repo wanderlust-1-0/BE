@@ -28,16 +28,24 @@ public class SeedData implements CommandLineRunner
         @Override
         public void run(String[] args) throws Exception
         {
-            Role r1 = new Role("user");
+            Role r1 = new Role("tourist");
+            Role r2= new Role("guide");
 
-            ArrayList<UserRoles> users = new ArrayList<>();
-            users.add(new UserRoles(new User(), r1));
+
+            ArrayList<UserRoles> tourists = new ArrayList<>();
+            tourists.add(new UserRoles(new User(), r1));
+
+            ArrayList<UserRoles> guides = new ArrayList<>();
+            guides.add(new UserRoles(new User(), r1));
 
             rolerepos.save(r1);
+            rolerepos.save(r2);
 
-            User u1 = new User("username", "password", users);
+            User u1 = new User("username", "password", tourists);
+            User u2 = new User("guide","password",guides);
 
             userrepos.save(u1);
+            userrepos.save(u2);
         }
 
 
