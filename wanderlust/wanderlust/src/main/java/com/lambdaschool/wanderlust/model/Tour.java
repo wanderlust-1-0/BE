@@ -64,9 +64,13 @@ public class Tour
     @JsonIgnoreProperties("tours")
     private Guide guide;
 
-    @ManyToMany(mappedBy = "tours")
+    @ManyToMany(mappedBy = "bookedtours")
     @JsonIgnoreProperties("tours")
     private List<Tourist> tourists= new ArrayList<>();
+
+    @ManyToMany(mappedBy = "favoritedtours")
+    @JsonIgnoreProperties("tours")
+    private List<Tourist> favoritedby= new ArrayList<>();
 
     public Tour()
     {
@@ -97,6 +101,16 @@ public class Tour
         this.meetingaddress = meetingaddress;
         this.likes = likes;
         this.guide = guide;
+    }
+
+    public List<Tourist> getFavoritedby()
+    {
+        return favoritedby;
+    }
+
+    public void setFavoritedby(List<Tourist> favoritedby)
+    {
+        this.favoritedby = favoritedby;
     }
 
     public long getTourid()

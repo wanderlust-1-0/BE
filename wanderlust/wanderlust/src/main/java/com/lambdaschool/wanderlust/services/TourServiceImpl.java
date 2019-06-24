@@ -45,6 +45,8 @@ public class TourServiceImpl implements TourService
 
             tourrepo.deleteTourFromTour(id);
 
+            tourrepo.deleteFavoritedTourFromTouristTours(id);
+
 
         }else
         {

@@ -17,16 +17,16 @@ INSERT INTO tour (tourid, tourdescription, tourguidephonenumber, whattobring,dur
 INSERT INTO tour (tourid, tourdescription, tourguidephonenumber, whattobring,durationhrs,likes,price,recommendedage) VALUES (4, 'Essentials of Finance', '1314241651234','78',5, 64,56,65);
 INSERT INTO tour (tourid, tourdescription, tourguidephonenumber, whattobring,durationhrs,likes,price,recommendedage) VALUES (5, 'Calling Texas Home', '1885171382134', '2000',5,45,56,56);
 
-INSERT INTO touristtours (tourid, touristid) VALUES (1, 6);
-INSERT INTO touristtours (tourid, touristid) VALUES (2, 2);
-INSERT INTO touristtours (tourid, touristid) VALUES (3, 2);
-INSERT INTO touristtours (tourid, touristid) VALUES (4, 5);
-INSERT INTO touristtours (tourid, touristid) VALUES (4, 3);
-INSERT INTO touristtours (tourid, touristid) VALUES (5, 4);
+INSERT INTO bookedtours (tourid, touristid) VALUES (1, 6);
+INSERT INTO bookedtours (tourid, touristid) VALUES (2, 2);
+INSERT INTO bookedtours (tourid, touristid) VALUES (3, 2);
+INSERT INTO bookedtours (tourid, touristid) VALUES (4, 5);
+INSERT INTO bookedtours (tourid, touristid) VALUES (4, 3);
+INSERT INTO bookedtours (tourid, touristid) VALUES (5, 4);
+
+INSERT INTO favoritedtours (tourid, touristid,) VALUES (1,1);
 
 
-
-INSERT INTO touristtours (tourid, touristid) VALUES (5, 4);
 
 
 

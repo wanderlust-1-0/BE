@@ -1,11 +1,13 @@
 package com.lambdaschool.wanderlust.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "tourist")
@@ -34,14 +36,46 @@ public class Tourist
     private Boolean istourguide=false;
 
     @ManyToMany
-    @JoinTable(name = "touristtours",
+    @JoinTable(name = "bookedtours",
             joinColumns = {@JoinColumn(name = "touristid")},
             inverseJoinColumns = {@JoinColumn(name = "tourid")})
     @JsonIgnoreProperties("tourists")
-    private List<Tour> tours = new ArrayList<>();
+    private List<Tour> bookedtours = new ArrayList<>();
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(name = "favoritedtours",
+            joinColumns = {@JoinColumn(name = "touristid")},
+            inverseJoinColumns = {@JoinColumn(name = "tourid")})
+    @JsonIgnoreProperties("tourists")
+    private List<Tour> favoritedtours = new ArrayList<>();
+
+
 
     public Tourist()
     {
+    }
+
+
+
+    public List<Tour> getFavoritedtours()
+    {
+        return favoritedtours;
+    }
+
+    public void setFavoritedtours(List<Tour> favoritedtours)
+    {
+        this.favoritedtours = favoritedtours;
+    }
+
+    public List<Tour> getBookedtours()
+    {
+        return bookedtours;
+    }
+
+    public void setBookedtours(List<Tour> bookedtours)
+    {
+        this.bookedtours = bookedtours;
     }
 
     public Boolean getIstourguide()
@@ -110,13 +144,13 @@ public class Tourist
         this.email = email;
     }
 
-    public List<Tour> getTours()
-    {
-        return tours;
-    }
-
-    public void setTours(List<Tour> tours)
-    {
-        this.tours = tours;
-    }
+//    public List<Tour> getTours()
+//    {
+//        return tours;
+//    }
+//
+//    public void setTours(List<Tour> tours)
+//    {
+//        this.tours = tours;
+//    }
 }

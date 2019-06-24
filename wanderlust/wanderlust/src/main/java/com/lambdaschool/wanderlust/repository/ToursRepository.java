@@ -15,8 +15,12 @@ public interface ToursRepository extends CrudRepository<Tour,Long>
 
 
     @Modifying
-    @Query(value = "DELETE FROM touristtours WHERE tourid=:tourid",nativeQuery = true)
+    @Query(value = "DELETE FROM bookedtours WHERE tourid=:tourid",nativeQuery = true)
     void deleteTourFromTouristTours(long tourid);
+
+    @Modifying
+    @Query(value = "DELETE FROM favoritedtours WHERE tourid=:tourid",nativeQuery = true)
+    void deleteFavoritedTourFromTouristTours(long tourid);
 
     @Modifying
     @Query(value = "DELETE FROM tour WHERE tourid=:tourid",nativeQuery = true)
