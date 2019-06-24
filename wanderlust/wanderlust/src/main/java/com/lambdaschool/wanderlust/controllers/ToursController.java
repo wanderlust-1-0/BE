@@ -37,10 +37,10 @@ public class ToursController
     }
 
 
-    @GetMapping(value = "/data/{tourid}")
-    public ResponseEntity<?> deleteTourById(@PathVariable long tourid)
+    @DeleteMapping(value = "/data/{id}")
+    public ResponseEntity<?> deleteTourById(@PathVariable long id)
     {
-        tourService.delete(tourid);
+        tourService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

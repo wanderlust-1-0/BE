@@ -40,9 +40,12 @@ public class TourServiceImpl implements TourService
 
         if(tourrepo.findById(id).isPresent())
         {
+
             tourrepo.deleteTourFromTouristTours(id);
+
             tourrepo.deleteTourFromTour(id);
-            tourrepo.deleteById(id);
+
+
         }else
         {
             throw new EntityNotFoundException(Long.toString(id));
