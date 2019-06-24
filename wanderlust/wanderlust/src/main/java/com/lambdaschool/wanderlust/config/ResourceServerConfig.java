@@ -42,10 +42,12 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
                 "/**/*.jpg",               // general web
                 "/**/*.html",              // general web
                 "/**/*.css",               // general web
-                "/**/*.js"                 // general web
+                "/**/*.js",
+                "/createnewtourist",
+                "/createnewguide"// general web
         )
                 .permitAll()
-                .antMatchers("/actuator/**","/roles","/**","/tours/**","users/**").authenticated()
+                .antMatchers("/actuator/**","/roles","/**","/tours/**","/users/**").authenticated()
                 .antMatchers("/tours/**").hasAnyRole("ADMIN", "USER", "DATA","TOURISTS")
                 .antMatchers("/tours/**","users/**").hasAnyRole("ADMIN","USER","GUIDES")
                 .and()

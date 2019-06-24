@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -86,4 +87,20 @@ public class RoleServiceImpl implements RoleService
     {
         rolerepos.deleteUserRoles(userid, roleid);
     }
+
+    @Override
+    public Role findByName(String name)
+    {
+        Role rr = rolerepos.findByNameIgnoreCase(name);
+
+        if (rr != null)
+        {
+            return rr;
+        }
+        else
+        {
+            throw new EntityNotFoundException(name);
+        }
+    }
+
 }
