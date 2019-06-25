@@ -6,6 +6,7 @@ import com.lambdaschool.wanderlust.services.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -19,16 +20,18 @@ public class ToursController
     private TourService tourService;
 
 
-    @GetMapping(value = "/tours",produces = {"application/json"})
+    @GetMapping(value = "/tours",
+            produces = {"application/json"})
     public ResponseEntity<?> listAllTours()
     {
         ArrayList<Tour> myTours=tourService.findAll();
         return new ResponseEntity<>(myTours, HttpStatus.OK);
     }
 
+
     @GetMapping(value = "/tour/{tourid}",
             produces = {"application/json"})
-    public ResponseEntity<?> getStudentById(
+    public ResponseEntity<?> getTourById(
             @PathVariable
                     Long tourid)
     {
@@ -36,7 +39,7 @@ public class ToursController
         return new ResponseEntity<>(t, HttpStatus.OK);
     }
 
-
+    @PreAuthorize("hasAuthority('ROLE_GUIDE')")
     @DeleteMapping(value = "/data/{id}")
     public ResponseEntity<?> deleteTourById(@PathVariable long id)
     {
@@ -44,6 +47,7 @@ public class ToursController
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_GUIDE')")
     @PutMapping(value = "/data/tours/{id}")
     public ResponseEntity<?> updateTour(@RequestBody Tour updateTour,@PathVariable long id)
     {
@@ -51,14 +55,13 @@ public class ToursController
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_GUIDE')")
     @PostMapping(value = "/data/tours/add")
     public ResponseEntity<?> addTour(@RequestBody Tour addTour)
     {
         tourService.save(addTour);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-
 
 
 

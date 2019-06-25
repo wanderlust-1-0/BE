@@ -18,4 +18,10 @@ public interface TouristService
 
     Tourist update(Tourist tourist, long id);
 
+    void  assignTouristToTour(long touristid, long tourid);
+
+    void addFavoritedtoTour(long touristid, long tourid);
+
+//    void deleteTourFromSelf(long id);
+
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 
 @Service(value = "touristService")
@@ -87,14 +88,35 @@ public class TouristServiceImpl implements TouristService
 
 
 
-
-
-
-
-
-
         return touristrepo.save(currentStudent);
     }
 
+
+    @Transactional
+    @Override
+    public void assignTouristToTour(long touristid, long tourid)
+    {
+        touristrepo.assignTouristToTour(touristid,tourid);
+    }
+
+
+//    @Override
+//    public void deleteTourFromSelf(long id) throws EntityNotFoundException
+//    {
+//        if (touristrepo.findById(id).isPresent())
+//        {
+//            touristrepo.deleteTourFromTouristTours(id);
+//        } else
+//        {
+//            throw new EntityNotFoundException(Long.toString(id));
+//        }
+//    }
+
+    @Transactional
+    @Override
+    public void addFavoritedtoTour(long touristid, long tourid)
+    {
+        touristrepo.addFavoritedTours(touristid,tourid);
+    }
 
 }

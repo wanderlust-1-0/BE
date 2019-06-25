@@ -1,7 +1,10 @@
 package com.lambdaschool.wanderlust.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -57,7 +60,7 @@ public class Tour
 
 //    @Column(nullable = false,
 //            unique = true)
-    private long likes;
+//    private long likes;
 
     @ManyToOne
     @JoinColumn(name="guideid")
@@ -68,6 +71,8 @@ public class Tour
     @JsonIgnoreProperties("tours")
     private List<Tourist> tourists= new ArrayList<>();
 
+
+    @JsonIgnore
     @ManyToMany(mappedBy = "favoritedtours")
     @JsonIgnoreProperties("tours")
     private List<Tourist> favoritedby= new ArrayList<>();
@@ -87,7 +92,7 @@ public class Tour
         this.tourname=tourname;
     }
 
-    public Tour(String tourname, String tourdescription, String tourguidephonenumber, long recommendedage, String whattobring, String category, String area, long price, long durationhrs, String meetingaddress, long likes, Guide guide)
+    public Tour(String tourname, String tourdescription, String tourguidephonenumber, long recommendedage, String whattobring, String category, String area, long price, long durationhrs, String meetingaddress,  Guide guide)
     {
         this.tourname = tourname;
         this.tourdescription = tourdescription;
@@ -99,7 +104,6 @@ public class Tour
         this.price = price;
         this.durationhrs = durationhrs;
         this.meetingaddress = meetingaddress;
-        this.likes = likes;
         this.guide = guide;
     }
 
@@ -211,16 +215,6 @@ public class Tour
     public void setMeetingaddress(String meetingaddress)
     {
         this.meetingaddress = meetingaddress;
-    }
-
-    public long getLikes()
-    {
-        return likes;
-    }
-
-    public void setLikes(long likes)
-    {
-        this.likes = likes;
     }
 
     public Guide getGuide()

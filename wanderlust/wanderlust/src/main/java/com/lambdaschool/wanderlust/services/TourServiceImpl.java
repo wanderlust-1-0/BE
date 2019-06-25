@@ -70,7 +70,6 @@ public class TourServiceImpl implements TourService
         newTour.setPrice(tour.getPrice());
         newTour.setDurationhrs(tour.getDurationhrs());
         newTour.setMeetingaddress(tour.getMeetingaddress());
-        newTour.setLikes(tour.getLikes());
         newTour.setTourguidephonenumber(tour.getTourguidephonenumber());
 
 
@@ -123,10 +122,6 @@ public class TourServiceImpl implements TourService
         if(tour.getMeetingaddress()!=null)
         {
             currentTour.setMeetingaddress(tour.getMeetingaddress());
-        }
-        if(tour.getLikes()!=0)
-        {
-            currentTour.setLikes(tour.getLikes());
         }
         if(tour.getTourguidephonenumber()!=null)
         {

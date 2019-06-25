@@ -1,17 +1,21 @@
 package com.lambdaschool.wanderlust.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "tourist")
-public class Tourist
+public class Tourist implements Serializable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -35,6 +39,7 @@ public class Tourist
 
     private Boolean istourguide=false;
 
+
     @ManyToMany
     @JoinTable(name = "bookedtours",
             joinColumns = {@JoinColumn(name = "touristid")},
@@ -42,7 +47,7 @@ public class Tourist
     @JsonIgnoreProperties("tourists")
     private List<Tour> bookedtours = new ArrayList<>();
 
-    @JsonIgnore
+
     @ManyToMany
     @JoinTable(name = "favoritedtours",
             joinColumns = {@JoinColumn(name = "touristid")},
@@ -152,4 +157,7 @@ public class Tourist
 //    {
 //        this.tours = tours;
 //    }
+
+
+
 }

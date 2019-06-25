@@ -76,7 +76,7 @@ public class GuideController
     }
 
 
-    @DeleteMapping("/Guide/{guideid}")
+    @DeleteMapping("/guide/{guideid}")
     public ResponseEntity<?> deleteStudentById(
             @PathVariable
                     long guideid)

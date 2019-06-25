@@ -44,12 +44,14 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
                 "/**/*.css",               // general web
                 "/**/*.js",
                 "/createnewtourist",
-                "/createnewguide"// general web
+                "/createnewguide"
+
         )
                 .permitAll()
-                .antMatchers("/actuator/**","/roles","/**","/tours/**","/users/**","/guides","/tourists").authenticated()
-                .antMatchers("/tours/**").hasAnyRole("ADMIN", "USER", "DATA","TOURISTS")
-                .antMatchers("/tours/**","users/**").hasAnyRole("ADMIN","USER","GUIDES")
+                .antMatchers("/tours/**","/oauth/revoke-token","/users/**").authenticated()
+                .antMatchers("/guides/**").hasAnyRole("GUIDE")
+                .antMatchers("/tourists/**").hasAnyRole("TOURIST")
+                .antMatchers("/actuator/**").hasAnyRole("ADMIN")
                 .and()
                 .exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());
 

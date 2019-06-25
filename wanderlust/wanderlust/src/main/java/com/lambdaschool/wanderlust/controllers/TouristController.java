@@ -27,7 +27,7 @@ public class TouristController
 
 
     @GetMapping(value = "/tourists",produces = {"application/json"})
-    public ResponseEntity<?> listAllTours()
+    public ResponseEntity<?> listAllTourists()
     {
         ArrayList<Tourist> myTours=touristService.findAll();
         return new ResponseEntity<>(myTours, HttpStatus.OK);
@@ -81,6 +81,27 @@ public class TouristController
                     long touristid)
     {
         touristService.delete(touristid);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
+    @PutMapping(value = "/tourist/assignTourist/{touristid}/{tourid}",
+            produces = {"application/json"})
+    public ResponseEntity<?> assignTouristToTour(@PathVariable
+                                                           long touristid,
+                                                   @PathVariable
+                                                            long tourid) {
+        touristService.assignTouristToTour(touristid, tourid);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/tourist/addFavoritedTours/{touristid}/{tourid}")
+    public ResponseEntity<?> addFavoritedTours(@PathVariable
+                            long touristid,
+                            @PathVariable
+                            long tourid)
+    {
+        touristService.addFavoritedtoTour(touristid, tourid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
