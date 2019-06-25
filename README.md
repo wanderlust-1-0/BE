@@ -1,15 +1,17 @@
 # Back End Wanderlust
 
 ## What is Wanderlust
-Wanderlust is an application that connects tour guides and tourists seeking adventure i
+Wanderlust is an application that connects tour guides and tourists seeking adventure 
 Search for tour guides offering unique experiences for people of all ages
 
-Herokuhost deployment link:
+Herokuhost deployment link: https://roger-wanderlust.herokuapp.com
 
 ## endpoints for registering/login  accessable to all
-- guide signup POST "/createnewguide"
+- guide register POST "/createnewguide"
 
-- tourist signip POST "/createnewtourist"
+- tourist register POST "/createnewtourist"
+
+- both sigin POST "/oauth/token"
 
 ## endpoints for tours
 - listAllTours     GET "/tours/tours" accessable to all

@@ -25,9 +25,9 @@ INSERT INTO bookedtours (tourid, touristid) VALUES (2, 2);
 INSERT INTO bookedtours (tourid, touristid) VALUES (3, 2);
 
 
-INSERT INTO favoritedtours (tourid, touristid,) VALUES (1,1);
-INSERT INTO favoritedtours (tourid, touristid,) VALUES (1,1);
-INSERT INTO favoritedtours (tourid, touristid,) VALUES (3,3);
+INSERT INTO favoritedtours (tourid, touristid) VALUES (1,1);
+INSERT INTO favoritedtours (tourid, touristid) VALUES (1,1);
+INSERT INTO favoritedtours (tourid, touristid) VALUES (3,3);
 
 
 

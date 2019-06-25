@@ -44,7 +44,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
                 "/**/*.css",               // general web
                 "/**/*.js",
                 "/createnewtourist",
-                "/createnewguide"
+                "/createnewguide",
+                "/oauth/token"
 
         )
                 .permitAll()
