@@ -118,7 +118,16 @@ public class TouristController
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-
+    @DeleteMapping(value = "/tourist/delfavoritedTours/{touristid}/{tourid}")
+    public ResponseEntity<?> deleteFavoriteTouristTourById(
+            @PathVariable
+                    long touristid,
+            @PathVariable
+                    long tourid)
+    {
+        touristService.deleteFavTourFromSelf(touristid,tourid);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
 
 }

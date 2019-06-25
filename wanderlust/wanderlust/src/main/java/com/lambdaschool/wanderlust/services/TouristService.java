@@ -24,4 +24,5 @@ public interface TouristService
 
   void deleteTourFromSelf(long touristid, long tourid);
 
+    void deleteFavTourFromSelf(long touristid,long tourid);
 }

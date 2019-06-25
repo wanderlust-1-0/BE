@@ -115,6 +115,14 @@ public class TouristServiceImpl implements TouristService
         touristrepo.deleteTouristTourById2(touristid);
     }
 
+    @Transactional
+    @Override
+    public void deleteFavTourFromSelf(long touristid,long tourid)
+    {
+        touristrepo.deleteFavsTouristTourById(tourid);
+        touristrepo.deleteFavsTouristTourById2(touristid);
+    }
+
 
 
 
