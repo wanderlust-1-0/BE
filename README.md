@@ -6,63 +6,63 @@ Search for tour guides offering unique experiences for people of all ages
 
 Herokuhost deployment link:
 
-##endpoints for registering/login  accessable to all
-guide signup POST "/createnewguide"
+## endpoints for registering/login  accessable to all
+- guide signup POST "/createnewguide"
 
-tourist signip POST "/createnewtourist"
+- tourist signip POST "/createnewtourist"
 
-##endpoints for tours
-listAllTours     GET "/tours/tours" accessable to all
-
-
-getTourById   GET "/tours/tour/{id}" accessable to all
+## endpoints for tours
+- listAllTours     GET "/tours/tours" accessable to all
 
 
-deleteTourById  DELETE "/tours/data/{id}" accessable to guides
+- getTourById   GET "/tours/tour/{id}" accessable to all
 
 
-updateTour     PUT "tours/data/tours/{id}" accessable to guides
+- deleteTourById  DELETE "/tours/data/{id}" accessable to guides
 
 
-addTour    POST "tours/data/tours/add"accessable to guides
+- updateTour     PUT "tours/data/tours/{id}" accessable to guides
+
+
+- addTour    POST "tours/data/tours/add"accessable to guides
 
 
 
 
-##endpoints for tourists accessable to tourists
-listAllTourists GET "/tourists/tourists"
+## endpoints for tourists accessable to tourists
+- listAllTourists GET "/tourists/tourists"
 
-getTouristById GET "/tourists/{id}"
+- getTouristById GET "/tourists/{id}"
  
 
-addNewTourist   POST   "/tourists/add"
+- addNewTourist   POST   "/tourists/add"
 
 
-updateTourist     PUT  "/tourists/tourist{id}"
+- updateTourist     PUT  "/tourists/tourist{id}"
 
 
-deleteTouristById   DELETE "/tourists/tourist/{id}"
+- deleteTouristById   DELETE "/tourists/tourist/{id}"
 
 
-assignTouristToTour PUT "/tourists/tourist/assignTourist/{touristid}/{tourid}" accessable to tourists
+- assignTouristToTour PUT "/tourists/tourist/assignTourist/{touristid}/{tourid}" accessable to tourists
 
 
-addFavoritedTours PUT   "/tourists/tourist/addFavoritedTours/{touristid}/{tourid}"accessable to tourists
+- addFavoritedTours PUT   "/tourists/tourist/addFavoritedTours/{touristid}/{tourid}"accessable to tourists
 
-##endpoints for guides accessable to guides
-listAllGuides    GET "/guides/guides" 
-
-
-getGuideById  GET "/guides/guide/{id}" 
+## endpoints for guides accessable to guides
+- listAllGuides    GET "/guides/guides" 
 
 
-addNewGuide   POST "/guides/guide/add" 
+- getGuideById  GET "/guides/guide/{id}" 
 
 
-updateGuide   PUT  "/guides/guide/{id}" 
+- addNewGuide   POST "/guides/guide/add" 
 
 
-deleteStudentById   //// DELETE  "/guides/guide/id" 
+- updateGuide   PUT  "/guides/guide/{id}" 
+
+
+- deleteStudentById    DELETE  "/guides/guide/id" 
 
 
 
