@@ -8,4 +8,12 @@ public interface GuideService
 {
     ArrayList<Guide> findAll();
 
+    Guide findGuideById(long id);
+
+    void delete(long id);
+
+    Guide save (Guide guide);
+
+    Guide update(Guide guide, long id);
+
 }

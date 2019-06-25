@@ -47,7 +47,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
                 "/createnewguide"// general web
         )
                 .permitAll()
-                .antMatchers("/actuator/**","/roles","/**","/tours/**","/users/**").authenticated()
+                .antMatchers("/actuator/**","/roles","/**","/tours/**","/users/**","/guides","/tourists").authenticated()
                 .antMatchers("/tours/**").hasAnyRole("ADMIN", "USER", "DATA","TOURISTS")
                 .antMatchers("/tours/**","users/**").hasAnyRole("ADMIN","USER","GUIDES")
                 .and()

@@ -57,7 +57,6 @@ public class Tourist
     }
 
 
-
     public List<Tour> getFavoritedtours()
     {
         return favoritedtours;
