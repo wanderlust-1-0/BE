@@ -100,23 +100,22 @@ public class TouristServiceImpl implements TouristService
     }
 
 
-//    @Override
-//    public void deleteTourFromSelf(long id) throws EntityNotFoundException
-//    {
-//        if (touristrepo.findById(id).isPresent())
-//        {
-//            touristrepo.deleteTourFromTouristTours(id);
-//        } else
-//        {
-//            throw new EntityNotFoundException(Long.toString(id));
-//        }
-//    }
-
     @Transactional
     @Override
     public void addFavoritedtoTour(long touristid, long tourid)
     {
         touristrepo.addFavoritedTours(touristid,tourid);
     }
+
+    @Transactional
+    @Override
+    public void deleteTourFromSelf(long touristid,long tourid)
+    {
+        touristrepo.deleteTouristTourById(tourid);
+        touristrepo.deleteTouristTourById2(touristid);
+    }
+
+
+
 
 }

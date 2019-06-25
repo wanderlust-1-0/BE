@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 
@@ -62,6 +63,14 @@ public class ToursController
         tourService.save(addTour);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+//
+//    @PostMapping(value= "/uploadImage")
+//    public String uploadImage(@RequestParam("imageFile") MultipartFile imageFile)
+//    {
+//        String returnValue="";
+//        tourService.saveImage(imageFile);
+//    }
 
 
 

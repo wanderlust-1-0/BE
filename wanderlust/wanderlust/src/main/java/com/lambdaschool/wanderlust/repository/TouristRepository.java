@@ -15,13 +15,19 @@ public interface TouristRepository extends CrudRepository<Tourist,Long>
     @Query(value = "INSERT INTO bookedtours(touristid, tourid) VALUES (:touristid, :tourid)", nativeQuery = true)
     void assignTouristToTour(long touristid, long tourid);
 
-//    @Modifying
-//    @Query(value = "DELETE FROM bookedtours WHERE tourid=:tourid",nativeQuery = true)
-//    void deleteTourFromTouristTours(long tourid);
 
     @Modifying
     @Query(value = "INSERT INTO favoritedtours(touristid, tourid) VALUES (:touristid, :tourid)", nativeQuery = true)
     void addFavoritedTours(long touristid, long tourid);
 
+    @Modifying
+    @Query(value="DELETE FROM bookedtours WHERE tourid=:tourid",nativeQuery = true)
+    void deleteTouristTourById(long tourid);
+
+    @Modifying
+    @Query(value = "DELETE FROM bookedtours WHERE touristid=:touristid",nativeQuery = true)
+    void deleteTouristTourById2(long touristid);
 
 }
+
+

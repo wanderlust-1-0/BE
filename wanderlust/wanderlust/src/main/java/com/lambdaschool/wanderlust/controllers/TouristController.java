@@ -95,6 +95,19 @@ public class TouristController
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+
+    @DeleteMapping(value = "/tourist/deltour/{touristid}/{tourid}")
+    public ResponseEntity<?> deleteTouristTourById(
+            @PathVariable
+                    long touristid,
+            @PathVariable
+                    long tourid)
+    {
+        touristService.deleteTourFromSelf(touristid,tourid);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
     @PutMapping("/tourist/addFavoritedTours/{touristid}/{tourid}")
     public ResponseEntity<?> addFavoritedTours(@PathVariable
                             long touristid,
@@ -104,5 +117,8 @@ public class TouristController
         touristService.addFavoritedtoTour(touristid, tourid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+
+
 
 }

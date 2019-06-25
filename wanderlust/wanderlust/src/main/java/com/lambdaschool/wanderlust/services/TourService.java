@@ -2,6 +2,7 @@ package com.lambdaschool.wanderlust.services;
 
 import com.lambdaschool.wanderlust.model.Tour;
 import com.lambdaschool.wanderlust.view.CountTouristInTour;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 
@@ -19,5 +20,6 @@ public interface TourService
 
     Tour update(Tour tour,long id);
 
+//    void saveImage(MultipartFile imageFile) throws Exception;
 
 }
