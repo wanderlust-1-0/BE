@@ -11,7 +11,7 @@ Herokuhost deployment link: https://roger-wanderlust.herokuapp.com
 
 - tourist register POST "/createnewtourist"
 
-- both sigin POST "/oauth/token"
+- both signin POST "/oauth/token"
 
 ## endpoints for tours
 - listAllTours     GET "/tours/tours" accessable to all
@@ -51,6 +51,10 @@ Herokuhost deployment link: https://roger-wanderlust.herokuapp.com
 
 - addFavoritedTours PUT   "/tourists/tourist/addFavoritedTours/{touristid}/{tourid}"accessable to tourists
 
+- delete assigned/bookedtours from user DELETE "/tourist/deltour/{touristid}/{tourid}"
+
+- delete favorited tours from user DELETE "/tourist/delfavoritedTours/{touristid}/{tourid}"
+
 ## endpoints for guides accessable to guides
 - listAllGuides    GET "/guides/guides" 
 
@@ -65,9 +69,6 @@ Herokuhost deployment link: https://roger-wanderlust.herokuapp.com
 
 
 - deleteStudentById    DELETE  "/guides/guide/id" 
-
-
-
 
 
 
