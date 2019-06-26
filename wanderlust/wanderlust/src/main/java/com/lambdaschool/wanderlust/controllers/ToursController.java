@@ -64,13 +64,7 @@ public class ToursController
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-//
-//    @PostMapping(value= "/uploadImage")
-//    public String uploadImage(@RequestParam("imageFile") MultipartFile imageFile)
-//    {
-//        String returnValue="";
-//        tourService.saveImage(imageFile);
-//    }
+
 
 
 

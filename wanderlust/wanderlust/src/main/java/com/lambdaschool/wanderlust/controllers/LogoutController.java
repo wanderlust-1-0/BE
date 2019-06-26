@@ -33,4 +33,5 @@ public class LogoutController
             tokenStore.removeAccessToken(accessToken);
         }
     }
+
 }

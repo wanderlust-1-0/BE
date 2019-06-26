@@ -67,13 +67,16 @@ public class Tour
     @JsonIgnoreProperties("tours")
     private Guide guide;
 
-    @ManyToMany(mappedBy = "bookedtours")
+    @ManyToMany(mappedBy = "bookedtours",
+            cascade = CascadeType.ALL
+           )
     @JsonIgnoreProperties("tours")
     private List<Tourist> tourists= new ArrayList<>();
 
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "favoritedtours")
+    @ManyToMany(mappedBy = "favoritedtours", cascade = CascadeType.ALL
+            )
     @JsonIgnoreProperties("tours")
     private List<Tourist> favoritedby= new ArrayList<>();
 

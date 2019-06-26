@@ -43,12 +43,15 @@ public class TourServiceImpl implements TourService
         if(tourrepo.findById(id).isPresent())
         {
 
-            tourrepo.deleteTourFromTouristTours(id);
+//            tourrepo.deleteTourFromTouristTours(id);
+//
+//
+//            tourrepo.deleteTourFromTour(id);
+//
+//
+//            tourrepo.deleteFavoritedTourFromTouristTours(id);
 
-            tourrepo.deleteTourFromTour(id);
-
-            tourrepo.deleteFavoritedTourFromTouristTours(id);
-
+            tourrepo.deleteById(id);
 
         }else
         {
