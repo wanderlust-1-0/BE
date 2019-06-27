@@ -34,16 +34,16 @@ Herokuhost deployment link: https://roger-wanderlust.herokuapp.com
 ## endpoints for tourists accessable to tourists
 - listAllTourists GET "/tourists/tourists"
 
-- getTouristById GET "/tourists/{id}"
+- getTouristById GET "/tourists/tourist/{id}"
  
 
-- addNewTourist   POST   "/tourists/add"
+- addNewTourist   POST   "tourists/tourist/add"
 
 
-- updateTourist     PUT  "/tourists/tourist{id}"
+- updateTourist     PUT  "/tourists/tourist/{touristid}"
 
 
-- deleteTouristById   DELETE "/tourists/tourist/{id}"
+- deleteTouristById   DELETE "/tourists/tourist/{touristid}"
 
 
 - assignTouristToTour PUT "/tourists/tourist/assignTourist/{touristid}/{tourid}" accessable to tourists
@@ -51,9 +51,9 @@ Herokuhost deployment link: https://roger-wanderlust.herokuapp.com
 
 - addFavoritedTours PUT   "/tourists/tourist/addFavoritedTours/{touristid}/{tourid}"accessable to tourists
 
-- delete assigned/bookedtours from user DELETE "/tourist/deltour/{touristid}/{tourid}"
+- delete assigned/bookedtours from user DELETE "/tourists/tourist/deltour/{touristid}/{tourid}"
 
-- delete favorited tours from user DELETE "/tourist/delfavoritedTours/{touristid}/{tourid}"
+- delete favorited tours from user DELETE "/tourists/tourist/delfavoritedTours/{touristid}/{tourid}"
 
 ## endpoints for guides accessable to guides
 - listAllGuides    GET "/guides/guides" 
@@ -65,10 +65,10 @@ Herokuhost deployment link: https://roger-wanderlust.herokuapp.com
 - addNewGuide   POST "/guides/guide/add" 
 
 
-- updateGuide   PUT  "/guides/guide/{id}" 
+- updateGuide   PUT  "/guides/guide/{guideid}" 
 
 
-- deleteStudentById    DELETE  "/guides/guide/id" 
+- deleteStudentById    DELETE  "/guides/guide/{guideid}" 
 
 
 

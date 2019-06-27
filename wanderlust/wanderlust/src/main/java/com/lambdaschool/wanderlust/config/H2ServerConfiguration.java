@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.sql.SQLException;
 
-//@Configuration
+@Configuration
 // taken from https://techdev.io/en/developer-blog/querying-the-embedded-h2-database-of-a-spring-boot-application
 // necessary for using the database tool built into intellij
 public class H2ServerConfiguration {

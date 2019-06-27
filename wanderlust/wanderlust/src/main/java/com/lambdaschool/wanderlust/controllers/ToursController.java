@@ -57,7 +57,7 @@ public class ToursController
     }
 
 
-    @PostMapping  (value = "/data/tours/add")
+    @PostMapping (value = "/data/tours/add")
     public ResponseEntity<?> addTour(@RequestBody Tour addTour)
     {
         tourService.save(addTour);
