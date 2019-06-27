@@ -40,7 +40,7 @@ public class ToursController
         return new ResponseEntity<>(t, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAuthority('ROLE_GUIDE')")
+
     @DeleteMapping(value = "/data/{id}")
     public ResponseEntity<?> deleteTourById(@PathVariable long id)
     {
@@ -48,7 +48,7 @@ public class ToursController
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAuthority('ROLE_GUIDE')")
+
     @PutMapping(value = "/data/tours/{id}")
     public ResponseEntity<?> updateTour(@RequestBody Tour updateTour,@PathVariable long id)
     {
@@ -56,8 +56,8 @@ public class ToursController
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAuthority('ROLE_GUIDE')")
-    @PostMapping(value = "/data/tours/add")
+
+    @PostMapping  (value = "/data/tours/add")
     public ResponseEntity<?> addTour(@RequestBody Tour addTour)
     {
         tourService.save(addTour);

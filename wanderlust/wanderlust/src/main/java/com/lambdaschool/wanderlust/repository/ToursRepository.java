@@ -14,14 +14,14 @@ public interface ToursRepository extends CrudRepository<Tour,Long>
 //    ArrayList<Tour> findTourByTourNameEquals(String name);
 
 
-//    @Modifying
-//    @Query(value = "DELETE FROM bookedtours WHERE tourid=:tourid",nativeQuery = true)
-//    void deleteTourFromTouristTours(long tourid);
-//
-//
-//    @Modifying
-//    @Query(value = "DELETE FROM favoritedtours WHERE tourid=:tourid",nativeQuery = true)
-//    void deleteFavoritedTourFromTouristTours(long tourid);
+    @Modifying
+    @Query(value = "DELETE FROM bookedtours WHERE tourid=:tourid",nativeQuery = true)
+    void deleteTourFromTouristTours(long tourid);
+
+
+    @Modifying
+    @Query(value = "DELETE FROM favoritedtours WHERE tourid=:tourid",nativeQuery = true)
+    void deleteFavoritedTourFromTouristTours(long tourid);
 //
 //
 //    @Modifying

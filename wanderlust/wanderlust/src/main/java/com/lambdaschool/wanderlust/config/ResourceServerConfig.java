@@ -50,8 +50,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
         )
                 .permitAll()
                 .antMatchers("/tours/**","/oauth/revoke-token","/users/**").authenticated()
-                .antMatchers("/guides/**").hasAnyRole("GUIDE")
-                .antMatchers("/tourists/**").hasAnyRole("TOURIST")
+//                .antMatchers("/guides/**").hasAnyRole("GUIDE")
+//                .antMatchers("/tourists/**").hasAnyRole("TOURIST")
                 .antMatchers("/actuator/**").hasAnyRole("ADMIN")
                 .and()
                 .exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());

@@ -39,7 +39,7 @@ public class GuideServiceImplTest
     @Test
     public void findAll()
     {
-        assertEquals(3, guideService.findAll().size());
+        assertEquals(2, guideService.findAll().size());
     }
 
     @Test
@@ -82,7 +82,7 @@ public class GuideServiceImplTest
         Guide guide = new Guide("charles");
         guide.setGuideid(1);
 
-        Guide updatedguide= guideService.update(guide,1);
+        Guide updatedguide= guideService.update(guide,3);
         assertEquals("charles",updatedguide.getFirstname());
 
 

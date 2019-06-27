@@ -11,7 +11,7 @@
     <groupId>com.lambdaschool</groupId>
     <artifactId>authenticatedusers</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>authenticatedusers</name>
+    <name>wanderlust</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -136,7 +136,7 @@
 
     <build>
         <!--        <finalName>${project.artifactId}</finalName>-->
-        <finalName>jrmmba-starthere</finalName>
+        <finalName>wanderlust</finalName>
 
         <plugins>
             <plugin>
